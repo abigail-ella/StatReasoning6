@@ -473,3 +473,14 @@ waic(m.watertemp.site)
 ```
 
 With side included, the WAIC and PSIS values are lower, so this model is better.
+
+### Predict response of random effects
+
+```{r}
+preds <- predict_response(m.watertemp.site,
+                          interval = "prediction",
+                          terms = "site",
+                          type = "random")
+
+plot(preds)
+```
